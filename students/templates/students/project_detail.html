@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="text-gray-700 body-font overflow-hidden">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <div class="w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                <div class="w-full flex items-center justify-between space-x-6">
+                    <div class="flex-1 truncate">
+                        <div class="flex items-center space-x-3">
+                            <h3 class="text-3xl text-gray-900 font-medium truncate">{{ project.student.first_name }} {{ project.student.last_name }}</h3>
+                        </div>
+                    </div>
+                    {% if project.student.profile_picture %}
+                    <img class="w-16 h-16 bg-gray-300 rounded-full flex-shrink-0" src="{{ project.student.profile_picture.url }}" alt="">
+                    {% endif %}
+                </div>
+                <div class="flex mb-4">
+                    <a href="{% url 'students:project-detail' project.pk %}" class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1">
+                        Overview
+                    </a>
+                    <a href="{% url 'students:project-update' project.pk %}" class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">
+                        Update Details
+                    </a>    
+                </div>
+                <div class="flex border-t border-gray-300 py-2">
+                    <span class="text-gray-500">Student Number</span>
+                    <span class="ml-auto text-gray-900">{{ project.student.student_number }}</span>
+                </div>
+                <div class="flex border-t border-gray-300 py-2">
+                    <span class="text-gray-500">Email</span>
+                    <span class="ml-auto text-gray-900">{{ project.student.email }}</span>
+                </div>
+                <div class="flex border-t border-gray-300 py-2">
+                    <span class="text-gray-500">Phone Number</span>
+                    <span class="ml-auto text-gray-900">{{ project.student.phone_number }}</span>
+                </div>
+                <div class="flex border-t border-gray-300 py-2">
+                    <span class="text-gray-500">Project Name</span>
+                    <span class="ml-auto text-gray-900">{{ project.name }}</span>
+                </div>
+                <div class="flex border-t border-gray-300 py-2">
+                    <span class="text-gray-500">Deadline</span>
+                    <span class="ml-auto text-gray-900">{{ project.deadline }}</span>
+                </div>
+                {% if project.file %}
+                <div class="flex border-t border-gray-300 py-2">
+                    <span class="text-gray-500">File</span>
+                    <span class="ml-auto text-gray-900">{{ project.file }}</span>
+                </div>
+                {% endif %}
+                <div class="flex border-t border-b mb-6 border-gray-300 py-2">
+                    <span class="text-gray-500">Grade</span>
+                    <span class="ml-auto text-gray-900">{{ project.grade }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+{% endblock content %}

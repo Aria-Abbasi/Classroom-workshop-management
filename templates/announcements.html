@@ -1,0 +1,31 @@
+{% if request.user.is_authenticated %}
+    {% if announcements %}
+        {% for announcement in announcements %}
+            <div class="p-4 border-l-4
+            {% if announcement.level == 'success' %}
+            bg-green-50 border-green-400
+            {% elif announcement.level == 'info' %}
+            bg-blue-50 border-blue-400
+            {% elif announcement.level == 'warning' %}
+            bg-yellow-50 border-yellow-400
+            {% else %}
+            bg-red-50 border-red-400
+            {% endif %}
+            ">
+                <p class="text-sm
+                {% if announcement.level == 'success' %}
+                text-green-700
+                {% elif announcement.level == 'info' %}
+                text-blue-700
+                {% elif announcement.level == 'warning' %}
+                text-yellow-700
+                {% else %}
+                text-red-700
+                {% endif %}
+                ">
+                    {{ announcement.body }}
+                </p>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endif %}
