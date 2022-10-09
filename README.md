@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/Aria-Abbasi/Classroom-workshop-management">
-    <img src="static/images/cws-logo.png" alt="Logo" width="80" height="80">
+    <img src="static/images/cws-logo.png" alt="Logo" width="120" height="80">
   </a>
 
 <h3 align="center">Classroom WorkShop</h3>
