@@ -43,8 +43,6 @@
    python3 manage.py runserver
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTACT -->
 ## Contact
 
@@ -52,4 +50,3 @@ Aria Abbasi - ariaabbasi10@gmail.com
 
 Project Link: [https://github.com/Aria-Abbasi/Classroom-workshop-management](https://github.com/Aria-Abbasi/Classroom-workshop-management)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
